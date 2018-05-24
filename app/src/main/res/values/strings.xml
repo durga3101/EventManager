@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Application</string>
+    <string name="enter_event">Enter Event</string>
+    <string name="submit">Submit</string>
+</resources>
