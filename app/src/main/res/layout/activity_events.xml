@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".events.view.EventsListActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/event_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
 
     <TextView
-        android:id="@+id/displayEvent"
-        android:layout_width="291dp"
-        android:layout_height="240dp"
-        android:layout_weight="1"
-        android:text="test" />
-</LinearLayout>
+        android:id="@+id/noEventsFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:text="@string/no_events" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="40dp"
+        android:onClick="addEvent"
+        android:src="@android:drawable/ic_input_add" />
+</RelativeLayout>

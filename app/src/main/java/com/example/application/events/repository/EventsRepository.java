@@ -22,11 +22,6 @@ public class EventsRepository {
     }
 
     public List<Event> getEvents() {
-        List<Event> all = db.databaseDao().getAll();
-
-        System.out.println("==========================");
-        System.out.println(all.get(0).getEventName());
-        System.out.println("==========================");
-        return all;
+        return db.databaseDao().getAll();
     }
 }

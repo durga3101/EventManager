@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Application</string>
     <string name="enter_event">Enter Event</string>
-    <string name="submit">Submit</string>
+    <string name="add">ADD</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="no_events">There Are No Events</string>
 </resources>

@@ -16,11 +16,12 @@ public class EventsListPresenter {
         this.repository = repository;
     }
 
-    public void saveEvent(String eventName) {
-        repository.saveEvent(new Event(eventName));
-    }
 
     public List<Event> getEvents() {
         return repository.getEvents();
+    }
+
+    public void saveEvent(String eventName) {
+        repository.saveEvent(new Event(eventName));
     }
 }

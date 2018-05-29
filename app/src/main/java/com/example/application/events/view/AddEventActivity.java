@@ -1,32 +1,31 @@
 package com.example.application.events.view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 import com.example.application.R;
-import com.example.application.events.presenters.EventsListPresenter;
 import com.example.application.events.repository.EventsRepository;
 
-public class MainActivity extends AppCompatActivity implements EventsListView {
-    EventsListPresenter presenter;
+import static com.example.application.events.view.EventsListActivity.ADD_TODO_CODE;
+
+public class AddEventActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add_event);
         EventsRepository repository = new EventsRepository(this);
-        presenter = new EventsListPresenter(this, repository);
     }
 
-    public void addEvent(View view) {
+    public void saveEvent(View view) {
         String eventName = ((EditText) findViewById(R.id.addEvent)).getText().toString();
 
-        Intent intent = new Intent(this, EventsListActivity.class);
+        Intent intent = new Intent();
         intent.putExtra("eventName", eventName);
-        startActivity(intent);
-        presenter.saveEvent(eventName);
+        setResult(ADD_TODO_CODE, intent);
+        finish();
     }
 }
