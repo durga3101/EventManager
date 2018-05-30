@@ -4,4 +4,10 @@
     <string name="add">ADD</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="no_events">There Are No Events</string>
+    <string name="details">Details</string>
+    <string name="agenda">Agenda</string>
+    <string name="people">people</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
