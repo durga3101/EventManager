@@ -34,7 +34,7 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
     @Override
     public void onBindViewHolder(@NonNull EventsListAdapter.EventViewHolder holder, int position) {
         Event event = events.get(position);
-        holder.titleView.setText(event.getEventName());
+        holder.titleView.setText(event.getName());
     }
 
     @Override

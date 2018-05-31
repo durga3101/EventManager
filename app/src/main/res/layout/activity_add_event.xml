@@ -7,22 +7,61 @@
     tools:context=".events.view.AddEventActivity">
 
     <EditText
-        android:id="@+id/addEvent"
+        android:id="@+id/eventName"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:hint="@string/enter_event" />
+        android:hint="@string/enter_event_name" />
+
+    <EditText
+        android:id="@+id/eventPlace"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventName"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="@string/enter_event_place" />
+
+    <EditText
+        android:id="@+id/eventDate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventPlace"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="@string/enter_event_date"
+        android:inputType="datetime" />
+
+    <EditText
+        android:id="@+id/eventTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDate"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="@string/enter_event_time"
+        android:inputType="time" />
+
+
+    <EditText
+        android:id="@+id/eventDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventTime"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="@string/enter_event_desc"
+        android:inputType="textLongMessage" />
 
     <Button
         android:id="@+id/submitEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/eventDescription"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="77dp"
         android:onClick="saveEvent"
-        android:text="@string/add" />
+        android:text="@string/addEvent" />
 </RelativeLayout>

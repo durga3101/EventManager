@@ -31,6 +31,7 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
         presenter = new EventsListPresenter(this, repository);
 
         List<Event> events = presenter.getEvents();
+        renderEvents(events);
         displayEvents(events);
     }
 
@@ -39,15 +40,16 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
             View noEventsView = findViewById(R.id.noEventsFound);
             noEventsView.setVisibility(View.VISIBLE);
         } else {
-            renderEvents(events);
+            RecyclerView recyclerView = findViewById(R.id.event_list_view);
+            recyclerView.setVisibility(View.VISIBLE);
         }
     }
 
     @Override
     public void renderEvents(List<Event> events) {
         eventsListAdapter = new EventsListAdapter(events);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.event_list_view);
-        recyclerView.setAdapter(new EventsListAdapter(events));
+        RecyclerView recyclerView = findViewById(R.id.event_list_view);
+        recyclerView.setAdapter(eventsListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
@@ -63,9 +65,16 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
 
         if (resultCode == ADD_TODO_CODE) {
             String eventName = data.getStringExtra("eventName");
+            String eventPlace = data.getStringExtra("eventPlace");
+            String eventDate = data.getStringExtra("eventDate");
+            String eventTime = data.getStringExtra("eventTime");
+            String eventDescription = data.getStringExtra("eventDescription");
 
-            presenter.saveEvent(eventName);
-            eventsListAdapter.addEvent(new Event(eventName));
+            Event event = new Event(eventName, eventPlace, eventDate, eventTime, eventDescription);
+            presenter.saveEvent(event);
+            eventsListAdapter.addEvent(event);
+            View noEventsView = findViewById(R.id.noEventsFound);
+            noEventsView.setVisibility(View.VISIBLE);
         }
     }
 

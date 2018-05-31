@@ -21,7 +21,7 @@ public class EventsListPresenter {
         return repository.getEvents();
     }
 
-    public void saveEvent(String eventName) {
-        repository.saveEvent(new Event(eventName));
+    public void saveEvent(Event event) {
+        repository.saveEvent(event);
     }
 }
