@@ -24,4 +24,8 @@ public class EventsListPresenter {
     public void saveEvent(Event event) {
         repository.saveEvent(event);
     }
+
+    public void deleteEvent(int eventId) {
+        repository.deleteEvent(eventId);
+    }
 }

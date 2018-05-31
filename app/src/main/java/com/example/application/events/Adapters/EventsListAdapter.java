@@ -13,14 +13,17 @@ import android.widget.TextView;
 import com.example.application.R;
 import com.example.application.events.Database.Event;
 import com.example.application.events.view.EventActivity;
+import com.example.application.events.view.EventsListActivity;
 
 import java.util.List;
 
 public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.EventViewHolder> {
 
+    private final EventsListActivity activity;
     private List<Event> events;
 
-    public EventsListAdapter(List<Event> events) {
+    public EventsListAdapter(List<Event> events, EventsListActivity activity) {
+        this.activity = activity;
         this.events = events;
     }
 
@@ -39,7 +42,7 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
 
     @Override
     public int getItemCount() {
-       return events.size();
+        return events.size();
     }
 
     public void addEvent(Event event) {
@@ -51,18 +54,32 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView titleView;
+        private final View deleteEvent;
 
         public EventViewHolder(View itemView) {
             super(itemView);
-            titleView = (TextView) itemView.findViewById(R.id.event_thumbnail_title);
+            titleView = itemView.findViewById(R.id.event_thumbnail_title);
+            deleteEvent = itemView.findViewById(R.id.deleteEvent);
             itemView.setOnClickListener(this);
+            deleteEvent.setOnClickListener(this);
         }
+
 
         @Override
         public void onClick(View view) {
-            Context context = view.getContext();
-            Intent intent = new Intent(context.getApplicationContext(), EventActivity.class);
-            ((Activity)context).startActivity(intent);
+            switch (view.getId()) {
+                case R.id.deleteEvent:
+                    Event event = events.get(getAdapterPosition());
+                    activity.deleteEvent(event.getEventId());
+                    events.remove(event);
+                    notifyDataSetChanged();
+                    break;
+                default:
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context.getApplicationContext(), EventActivity.class);
+                    ((Activity) context).startActivity(intent);
+
+            }
         }
     }
 }

@@ -24,4 +24,8 @@ public class EventsRepository {
     public List<Event> getEvents() {
         return db.databaseDao().getAll();
     }
+
+    public void deleteEvent(int eventId) {
+        db.databaseDao().delete(eventId);
+    }
 }

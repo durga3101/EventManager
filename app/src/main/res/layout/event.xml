@@ -6,13 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffffff"
-    android:padding="5dp"
-    android:gravity="center">
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/event_thumbnail_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp" />
 
     <TextView
         android:id="@+id/event_thumbnail_title"
-        android:layout_width="fill_parent"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_gravity="center|top"
-        android:textSize="14sp" />
+        android:layout_toRightOf="@+id/event_thumbnail_image"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/deleteEvent"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:text="X"
+        android:src="@android:drawable/ic_delete" />
 </RelativeLayout>

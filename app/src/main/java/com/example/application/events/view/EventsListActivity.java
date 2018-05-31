@@ -47,7 +47,7 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
 
     @Override
     public void renderEvents(List<Event> events) {
-        eventsListAdapter = new EventsListAdapter(events);
+        eventsListAdapter = new EventsListAdapter(events, this);
         RecyclerView recyclerView = findViewById(R.id.event_list_view);
         recyclerView.setAdapter(eventsListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -78,4 +78,7 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
         }
     }
 
+    public void deleteEvent(int eventId) {
+        presenter.deleteEvent(eventId);
+    }
 }

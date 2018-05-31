@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class Event {
 
     @PrimaryKey(autoGenerate = true)
-    private int uid;
+    private int eventId;
 
     private String name;
     private String place;
@@ -23,12 +23,12 @@ public class Event {
         this.description = description;
     }
 
-    public int getUid() {
-        return uid;
+    public int getEventId() {
+        return eventId;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public String getName() {

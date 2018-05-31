@@ -1,7 +1,6 @@
 package com.example.application.events.Database;
 
         import android.arch.persistence.room.Dao;
-        import android.arch.persistence.room.Delete;
         import android.arch.persistence.room.Insert;
         import android.arch.persistence.room.Query;
 
@@ -15,6 +14,6 @@ public interface DatabaseDao {
     @Insert
     void insertAll(Event... event);
 
-    @Delete
-    void delete(Event event);
+    @Query("DELETE FROM event_table where eventId = :eventId")
+    void delete(int eventId);
 }
