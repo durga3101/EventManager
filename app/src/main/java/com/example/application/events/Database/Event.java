@@ -2,9 +2,11 @@ package com.example.application.events.Database;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import java.io.Serializable;
 
 @Entity(tableName = "event_table")
-public class Event {
+@SuppressWarnings("serial")
+public class Event implements  Serializable{
 
     @PrimaryKey(autoGenerate = true)
     private int eventId;

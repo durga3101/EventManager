@@ -20,7 +20,7 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
     EventsListPresenter presenter;
     private EventsListAdapter eventsListAdapter;
 
-    public static final int ADD_TODO_CODE = 9090;
+    public static final int ADD_EVENT_CODE = 9090;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,21 +56,15 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
 
     public void addEvent(View view) {
         Intent intent = new Intent(this, AddEventActivity.class);
-        startActivityForResult(intent, ADD_TODO_CODE);
+        startActivityForResult(intent, ADD_EVENT_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == ADD_TODO_CODE) {
-            String eventName = data.getStringExtra("eventName");
-            String eventPlace = data.getStringExtra("eventPlace");
-            String eventDate = data.getStringExtra("eventDate");
-            String eventTime = data.getStringExtra("eventTime");
-            String eventDescription = data.getStringExtra("eventDescription");
-
-            Event event = new Event(eventName, eventPlace, eventDate, eventTime, eventDescription);
+        if (resultCode == ADD_EVENT_CODE) {
+            Event event = (Event) data.getSerializableExtra("event");
             presenter.saveEvent(event);
             eventsListAdapter.addEvent(event);
             View noEventsView = findViewById(R.id.noEventsFound);

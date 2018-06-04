@@ -13,7 +13,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/pic_1"/>
 
     <TextView
         android:id="@+id/event_thumbnail_title"

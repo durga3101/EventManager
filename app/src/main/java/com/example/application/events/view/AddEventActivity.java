@@ -9,7 +9,10 @@ import android.widget.EditText;
 import com.example.application.R;
 import com.example.application.events.Database.Event;
 
-import static com.example.application.events.view.EventsListActivity.ADD_TODO_CODE;
+
+import java.io.Serializable;
+
+import static com.example.application.events.view.EventsListActivity.ADD_EVENT_CODE;
 
 public class AddEventActivity extends AppCompatActivity {
 
@@ -26,15 +29,10 @@ public class AddEventActivity extends AppCompatActivity {
         String eventTime = ((EditText) findViewById(R.id.eventTime)).getText().toString();
         String eventDescription = ((EditText) findViewById(R.id.eventDescription)).getText().toString();
 
-
-
         Intent intent = new Intent();
-        intent.putExtra("eventName", eventName);
-        intent.putExtra("eventPlace", eventPlace);
-        intent.putExtra("eventDate", eventDate);
-        intent.putExtra("eventTime", eventTime);
-        intent.putExtra("eventDescription", eventDescription);
-        setResult(ADD_TODO_CODE, intent);
+        Event event = new Event(eventName, eventPlace, eventDate, eventTime, eventDescription);
+        intent.putExtra("event", (Serializable) event);
+        setResult(ADD_EVENT_CODE, intent);
         finish();
     }
 }
