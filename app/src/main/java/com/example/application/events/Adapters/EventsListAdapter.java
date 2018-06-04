@@ -77,6 +77,7 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
                 default:
                     Context context = view.getContext();
                     Intent intent = new Intent(context.getApplicationContext(), EventActivity.class);
+                    intent.putExtra("event", events.get(getAdapterPosition()));
                     ((Activity) context).startActivity(intent);
 
             }

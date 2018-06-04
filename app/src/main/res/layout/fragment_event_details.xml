@@ -3,13 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="100dp"
     tools:context=".events.view.event.DetailsFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/detailsHeading"
+        android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
         android:text="Details" />
+
+    <ImageView
+        android:id="@+id/eventDetailsImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/detailsHeading"
+        android:src="@drawable/wallpaper2you_364326"/>
+
+    <TextView
+        android:id="@+id/eventDetailsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDetailsImage"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/eventDetailsPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDetailsTitle"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/eventDetailsDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDetailsPlace"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/eventDetailsTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDetailsDate"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/eventDetailsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventDetailsTime"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

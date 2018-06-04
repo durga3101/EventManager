@@ -9,9 +9,6 @@ import android.widget.EditText;
 import com.example.application.R;
 import com.example.application.events.Database.Event;
 
-
-import java.io.Serializable;
-
 import static com.example.application.events.view.EventsListActivity.ADD_EVENT_CODE;
 
 public class AddEventActivity extends AppCompatActivity {
@@ -31,7 +28,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         Event event = new Event(eventName, eventPlace, eventDate, eventTime, eventDescription);
-        intent.putExtra("event", (Serializable) event);
+        intent.putExtra("event", event);
         setResult(ADD_EVENT_CODE, intent);
         finish();
     }
