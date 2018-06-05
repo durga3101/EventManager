@@ -64,7 +64,7 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == ADD_EVENT_CODE) {
-            Event event = (Event) data.getSerializableExtra("event");
+            Event event = (Event) data.getSerializableExtra("event_thumbnail");
             presenter.saveEvent(event);
             eventsListAdapter.addEvent(event);
             View noEventsView = findViewById(R.id.noEventsFound);

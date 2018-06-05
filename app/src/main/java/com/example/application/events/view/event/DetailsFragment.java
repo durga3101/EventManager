@@ -18,7 +18,7 @@ public class DetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        event = (Event) getArguments().getSerializable("event");
+        event = (Event) getArguments().getSerializable("event_thumbnail");
     }
 
     @Override

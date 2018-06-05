@@ -17,7 +17,7 @@ public class EventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event);
+        setContentView(R.layout.event_tabs);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -35,9 +35,9 @@ public class EventActivity extends AppCompatActivity {
     }
 
     private DetailsFragment getDetailsFragment() {
-        Event event = (Event) getIntent().getSerializableExtra("event");
+        Event event = (Event) getIntent().getSerializableExtra("event_thumbnail");
         Bundle bundle = new Bundle();
-        bundle.putSerializable("event", event);
+        bundle.putSerializable("event_thumbnail", event);
 
         DetailsFragment detailsFragment = new DetailsFragment();
         detailsFragment.setArguments(bundle);

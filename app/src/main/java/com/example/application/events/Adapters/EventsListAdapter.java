@@ -30,7 +30,7 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
 
     @Override
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View eventView = LayoutInflater.from(parent.getContext()).inflate(R.layout.event, null, false);
+        View eventView = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_thumbnail, null, false);
         return new EventViewHolder(eventView);
     }
 
@@ -77,7 +77,7 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
                 default:
                     Context context = view.getContext();
                     Intent intent = new Intent(context.getApplicationContext(), EventActivity.class);
-                    intent.putExtra("event", events.get(getAdapterPosition()));
+                    intent.putExtra("event_thumbnail", events.get(getAdapterPosition()));
                     ((Activity) context).startActivity(intent);
 
             }

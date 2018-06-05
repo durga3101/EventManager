@@ -28,7 +28,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         Event event = new Event(eventName, eventPlace, eventDate, eventTime, eventDescription);
-        intent.putExtra("event", event);
+        intent.putExtra("event_thumbnail", event);
         setResult(ADD_EVENT_CODE, intent);
         finish();
     }
