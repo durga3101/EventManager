@@ -1,6 +1,6 @@
 package com.example.application.events.presenters;
 
-import com.example.application.events.Database.Event;
+import com.example.application.events.database.Event;
 import com.example.application.events.repository.EventsRepository;
 import com.example.application.events.view.EventsListView;
 

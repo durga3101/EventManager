@@ -1,4 +1,4 @@
-package com.example.application.events.Database;
+package com.example.application.events.database;
 
 public class AgendaTopic {
 

@@ -1,10 +1,10 @@
-package com.example.application.events.Database;
+package com.example.application.events.database;
 
-        import android.arch.persistence.room.Dao;
-        import android.arch.persistence.room.Insert;
-        import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
 
-        import java.util.List;
+import java.util.List;
 
 @Dao
 public interface DatabaseDao {

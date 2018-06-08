@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.application.R;
-import com.example.application.events.Adapters.AgendaListAdapter;
-import com.example.application.events.Database.AgendaTopic;
+import com.example.application.events.adapters.AgendaListAdapter;
+import com.example.application.events.database.AgendaTopic;
 
 import java.util.ArrayList;
 import java.util.List;

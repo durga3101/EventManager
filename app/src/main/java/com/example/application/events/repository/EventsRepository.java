@@ -3,8 +3,8 @@ package com.example.application.events.repository;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 
-import com.example.application.events.Database.Event;
-import com.example.application.events.Database.EventsDatabase;
+import com.example.application.events.database.Event;
+import com.example.application.events.database.EventsDatabase;
 
 import java.util.List;
 

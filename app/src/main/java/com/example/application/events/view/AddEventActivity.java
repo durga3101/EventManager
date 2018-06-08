@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.application.R;
-import com.example.application.events.Database.Event;
+import com.example.application.events.database.Event;
 
 import static com.example.application.events.view.EventsListActivity.ADD_EVENT_CODE;
 

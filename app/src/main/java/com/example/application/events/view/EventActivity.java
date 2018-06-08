@@ -6,8 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.application.R;
-import com.example.application.events.Adapters.ViewPagerAdapter;
-import com.example.application.events.Database.Event;
+import com.example.application.events.adapters.ViewPagerAdapter;
+import com.example.application.events.database.Event;
 import com.example.application.events.view.event.AgendaFragment;
 import com.example.application.events.view.event.DetailsFragment;
 import com.example.application.events.view.event.VolunteersFragment;
@@ -19,10 +19,10 @@ public class EventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_tabs);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        ViewPager viewPager = findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.eventTabs);
+        TabLayout tabLayout = findViewById(R.id.eventTabs);
         tabLayout.setupWithViewPager(viewPager);
     }
 

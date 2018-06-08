@@ -1,4 +1,4 @@
-package com.example.application.events.Database;
+package com.example.application.events.database;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

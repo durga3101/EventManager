@@ -1,4 +1,4 @@
-package com.example.application.events.Adapters;
+package com.example.application.events.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.application.R;
-import com.example.application.events.Database.Event;
+import com.example.application.events.database.Event;
 import com.example.application.events.view.EventActivity;
 import com.example.application.events.view.EventsListActivity;
 

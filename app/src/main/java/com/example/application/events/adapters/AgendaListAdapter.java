@@ -1,4 +1,4 @@
-package com.example.application.events.Adapters;
+package com.example.application.events.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.application.R;
-import com.example.application.events.Database.AgendaTopic;
+import com.example.application.events.database.AgendaTopic;
 import com.example.application.events.view.event.AgendaFragment;
 
 import java.util.List;

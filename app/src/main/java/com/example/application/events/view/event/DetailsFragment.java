@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.application.R;
-import com.example.application.events.Database.Event;
+import com.example.application.events.database.Event;
 
 public class DetailsFragment extends Fragment {
 
@@ -33,19 +33,19 @@ public class DetailsFragment extends Fragment {
     }
 
     private void setDetails(View myInflatedView) {
-        TextView titleView = (TextView) myInflatedView.findViewById(R.id.eventDetailsTitle);
+        TextView titleView = myInflatedView.findViewById(R.id.eventDetailsTitle);
         titleView.setText(event.getName());
 
-        TextView placeView = (TextView) myInflatedView.findViewById(R.id.eventDetailsPlace);
+        TextView placeView = myInflatedView.findViewById(R.id.eventDetailsPlace);
         placeView.setText(event.getPlace());
 
-        TextView dateView = (TextView) myInflatedView.findViewById(R.id.eventDetailsDate);
+        TextView dateView = myInflatedView.findViewById(R.id.eventDetailsDate);
         dateView.setText(event.getDate());
 
-        TextView timeView = (TextView) myInflatedView.findViewById(R.id.eventDetailsTime);
+        TextView timeView = myInflatedView.findViewById(R.id.eventDetailsTime);
         timeView.setText(event.getTime());
 
-        TextView descriptionView = (TextView) myInflatedView.findViewById(R.id.eventDetailsDescription);
+        TextView descriptionView = myInflatedView.findViewById(R.id.eventDetailsDescription);
         descriptionView.setText(event.getDescription());
     }
 

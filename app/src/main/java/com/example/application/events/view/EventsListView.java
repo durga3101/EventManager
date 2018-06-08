@@ -1,6 +1,6 @@
 package com.example.application.events.view;
 
-import com.example.application.events.Database.Event;
+import com.example.application.events.database.Event;
 
 import java.util.List;
 

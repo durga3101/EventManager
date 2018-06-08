@@ -9,8 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.application.R;
-import com.example.application.events.Adapters.EventsListAdapter;
-import com.example.application.events.Database.Event;
+import com.example.application.events.adapters.EventsListAdapter;
+import com.example.application.events.database.Event;
 import com.example.application.events.presenters.EventsListPresenter;
 import com.example.application.events.repository.EventsRepository;
 
@@ -36,13 +36,9 @@ public class EventsListActivity extends AppCompatActivity implements EventsListV
     }
 
     private void displayEvents(List<Event> events) {
-        if (events.size() == 0) {
-            View noEventsView = findViewById(R.id.noEventsFound);
-            noEventsView.setVisibility(View.VISIBLE);
-        } else {
-            RecyclerView recyclerView = findViewById(R.id.event_list_view);
-            recyclerView.setVisibility(View.VISIBLE);
-        }
+        int viewId = events.isEmpty() ? R.id.noEventsFound : R.id.event_list_view;
+        View eventsView = findViewById(viewId);
+        eventsView.setVisibility(View.VISIBLE);
     }
 
     @Override

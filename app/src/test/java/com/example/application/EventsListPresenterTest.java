@@ -1,6 +1,6 @@
 package com.example.application;
 
-import com.example.application.events.Database.Event;
+import com.example.application.events.database.Event;
 import com.example.application.events.presenters.EventsListPresenter;
 import com.example.application.events.repository.EventsRepository;
 import com.example.application.events.view.EventsListView;
@@ -31,7 +31,7 @@ public class EventsListPresenterTest {
 
     @Test
     public void shouldSaveDataIntoDatabase() {
-        eventsListPresenter.saveEvent("testEvent");
+        eventsListPresenter.saveEvent(new Event("testEvent", "Hyd", "", "", ""));
 
         verify(eventsRepository).saveEvent(any(Event.class));
     }
